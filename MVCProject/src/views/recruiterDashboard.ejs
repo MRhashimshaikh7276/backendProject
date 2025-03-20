@@ -1,0 +1,49 @@
+<h1>Welcome to your Dashboard, <%= recruiter.username %></h1>
+<h2>Your Jobs</h2>
+<ul>
+  <% jobs.forEach(job => { %>
+    <li>
+      <h3><%= job.title %></h3>
+      <p><strong>Company:</strong> <%= job.company %></p>
+      <p><strong>Description:</strong> <%= job.description %></p>
+      <p><strong>Location:</strong> <%= job.location %></p>
+
+      <h4>Applicants:</h4>
+      <% if (job.applications && job.applications.length > 0) { %>
+        <ul>
+          <% job.applications.forEach(application => { %>
+            <li>
+              <p><strong>Name:</strong> <%= application.applicantName %></p>
+              <p><strong>Resume:</strong> <a href="/<%= application.resume %>" target="_blank">View Resume</a></p>
+            </li>
+          <% }) %>
+        </ul>
+      <% } else { %>
+        <p>No applicants yet.</p>
+      <% } %>
+
+      <a href="/recruiter/edit-job/<%= job.id %>">Edit</a> |
+      <a href="/recruiter/delete-job/<%= job.id %>">Delete</a>
+    </li>
+  <% }) %>
+</ul>
+
+<h2>Add a New Job</h2>
+<form action="/recruiter/add-job" method="POST">
+  <label for="title">Job Title:</label>
+  <input type="text" id="title" name="title" required><br><br>
+
+  <label for="company">Company:</label>
+  <input type="text" id="company" name="company" required><br><br>
+
+  <label for="description">Job Description:</label>
+  <textarea id="description" name="description" required></textarea><br><br>
+
+  <label for="location">Location:</label>
+  <input type="text" id="location" name="location" required><br><br>
+
+  <button type="submit">Add Job</button>
+</form>
+
+<br><br>
+<a href="/recruiter/logout">Logout</a>

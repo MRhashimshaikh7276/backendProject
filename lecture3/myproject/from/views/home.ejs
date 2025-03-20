@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+</head>
+<body>
+
+
+    <div>
+
+        <ul>
+            <% for( let i of fromList){%>
+            <li>
+                <p> <%= i.name %></p>
+                <p> <%= i.emailId %></p>
+                <p><%= i.studentCon %></p>
+                <p><%= i.parentCon %></p>
+                <p><%= i.address %></p>
+                <p><%= i.Dath %></p>
+                <p><%=i.male %></p>
+              <p>  <%= i.female %></p>
+
+            </li>
+            
+            <% } %>
+        </ul>
+    </div>
+    
+</body>
+</html>

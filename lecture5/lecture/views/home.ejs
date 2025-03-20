@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= title %>
+    </title>
+</head>
+
+<body>
+
+    <h1>Inside Home Page</h1>
+
+
+    <ul>
+        <% for (let i of contactlist){ %>
+            <li>
+                <h5>
+                    <%= i.name %>
+                </h5>
+                <p>
+                    <%= i.contact%>
+                </p>
+                <a href="">
+                    delete
+                </a>
+            </li>
+            <% } %>
+    </ul>
+
+    <form action="/ConactList" method="POST">
+        <input type="text" placeholder="Name" name="name" required>
+        <input type="number" placeholder="Contact" name="contact" required>
+        <button type="submit">Add Contact</button>
+    </form>
+
+
+</body>
+
+</html>

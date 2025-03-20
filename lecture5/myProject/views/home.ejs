@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= title %>
+    </title>
+</head>
+
+<body>
+
+
+    <div>
+
+        <ul>
+            <% for (let i of ContactList){ %>
+
+
+                <li>
+                    <h5>
+                        <%= i.name %>
+                    </h5>
+                    <p>
+                        <%= i.contact %>
+                    </p>
+                    <a href="/DeleteContact/?name=<%= i.name %>">Delete</a>
+                </li>
+
+                <% } %>
+        </ul>
+
+    </div>
+    <div>
+        
+
+        <form action="/ListCon" method="POST">
+
+
+            <input type="text" placeholder="Name" name="name" required>
+            <input type="number" placeholder="Contact Number" name="contact" required>
+
+            <button type="submit">Add Contact</button>
+        </form>
+    </div>
+</body>
+
+</html>

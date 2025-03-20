@@ -1,0 +1,13 @@
+<% layout('layout') %>
+<main>
+    <h2>Available Jobs</h2>
+    <ul>
+        <% jobs.forEach(job => { %>
+            <li>
+                <h3><a href="/jobs/<%= job.id %>"><%= job.title %></a></h3>
+                <p><%= job.companyName %> - <%= job.location %></p>
+                <p><%= job.salary %> | <%= job.category %></p>
+            </li>
+        <% }) %>
+    </ul>
+</main>

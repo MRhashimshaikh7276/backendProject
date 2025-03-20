@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Job Listings</title>
+</head>
+<body>
+  <h1>Available Jobs</h1>
+  <ul>
+    <% jobs.forEach(job => { %>
+      <li>
+        <h3><%= job.title %></h3>
+        <p><strong>Company:</strong> <%= job.company %></p>
+        <p><strong>Description:</strong> <%= job.description %></p>
+        <p><strong>Location:</strong> <%= job.location %></p>
+        <p><strong>Required Skills:</strong><%= job.description %>
+          <%= job.location %>
+          
+         
+          <% if (Array.isArray(job.skills)) { %>
+            Required Skills: <%= job.skills.join(", ") %>
+          <% } else { %>
+            Required Skills: Not available
+          <% } %>
+          
+
+          </p>
+        <form action="/jobs/apply/<%= job.id %>" method="GET">
+          <button type="submit">Apply for Job</button>
+        </form>
+      </li>
+    <% }); %>
+  </ul>
+</body>
+</html>

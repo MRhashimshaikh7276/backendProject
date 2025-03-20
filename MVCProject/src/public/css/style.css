@@ -1,0 +1,57 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.maindiv {
+    background-color: #f4f4f4;
+    padding: 10px;
+}
+
+ul.row {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+    
+}
+
+ul.row li {
+    display: inline-block;
+}
+
+ul.row li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.mainContain{
+    width: 80vw;
+margin: auto;
+
+}
+
+.item{
+    background-color: rgb(185, 82, 82);
+    width: 30%;
+    height: 400px;
+}
+
+.wrap{
+    width: 100%;
+    margin: auto;
+    gap: 1rem;
+    display: flex;
+    flex-direction: row;
+    
+
+    .allWrap{
+        background-color: rgb(162, 190, 192);
+        padding: 1rem 2rem;
+        width: 300px;
+    }
+        }
+
+       

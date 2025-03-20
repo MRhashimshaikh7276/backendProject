@@ -1,0 +1,13 @@
+<% layout('layout') %>
+<main>
+    <h2>Edit Job Posting</h2>
+    <form action="/jobs/<%= job.id %>?_method=PUT" method="POST">
+        <input type="text" name="title" value="<%= job.title %>" required>
+        <input type="text" name="companyName" value="<%= job.companyName %>" required>
+        <input type="text" name="location" value="<%= job.location %>" required>
+        <input type="text" name="salary" value="<%= job.salary %>" required>
+        <textarea name="description" required><%= job.description %></textarea>
+        <input type="text" name="skills" value="<%= job.skills.join(', ') %>">
+        <button type="submit">Update Job</button>
+    </form>
+</main>
